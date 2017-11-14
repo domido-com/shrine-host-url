@@ -23,7 +23,7 @@ Or install it yourself as:
 This plugin was developed to change minio host url and port for nginx static files caching.
 I had some problems with caching when I've done like this [article](https://blog.minio.io/enterprise-grade-cloud-storage-with-nginx-plus-and-minio-e708fb4cb3e8). Someone had the same [problems](https://github.com/minio/minio/issues/4120). It was resolved like that:
 1. You store file by direct link without nginx (or without nginx caching)
-2. For reading from storage you need to use an another link with ngginx caching
+2. For reading from storage you need to use an another link with nginx caching
 3. So, you need to change link in your RoR application
 
 Example nginx config for storage
