@@ -9,6 +9,7 @@ class Shrine
         def url(**options)
           new_uri(
             URI.parse(super),
+            uploader.opts[:host_url][:scheme],
             uploader.opts[:host_url][:host],
             uploader.opts[:host_url][:port]
           )
@@ -16,9 +17,9 @@ class Shrine
 
         private
 
-        def new_uri(uri, new_host, new_port)
+        def new_uri(uri, new_scheme, new_host, new_port)
           URI::HTTP.new(
-            uri.scheme,
+            new_scheme,
             uri.userinfo,
             new_host,
             new_port,
